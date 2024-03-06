@@ -8,5 +8,15 @@ a31 = float(input("a31")) ;
 a32 = float(input("a32")) ;
 a33 = float(input("a33")) ;
 
-Print ("Achtung auf korrekte Rechtschreibung unbedingt achten")
+print ("Achtung auf korrekte Rechtschreibung unbedingt achten")
 function = input("Rechenoperation eingeben: Dif, Sum, Multi")
+
+b11 = float(input("b11"))
+b12 = float(input("b12"))
+b13 = float(input("b13"))
+b21 = float(input("b21"))
+b22 = float(input("b22"))
+b23 = float(input("b23"))
+b31 = float(input("b31"))
+b32 = float(input("b32"))
+b33 = float(input("b33"))
