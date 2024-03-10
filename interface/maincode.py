@@ -2,57 +2,119 @@
 
 #Variables
 
-i = 2   #lines
-k = 2  #colums
+#i = 2   #lines
+#k = 2  #colums
 
 #Build matrice
-print("\n")
-for x in range (0,i):
-    for x in range (0,k):
-        print("[ ] ",end="")
-    print("\n",end="")
-print("\n",end="") 
+# print("\n")
+# for x in range (0,i):
+#     for x in range (0,k):
+#         print("[ ] ",end="")
+#     print("\n",end="")
+# print("\n",end="") 
+
+
+#################################################################################
+#                                                                               #
+#                           OUTPUT RESULT MATRICE                               #
+#                                                                               #
+#################################################################################
+
+
+#################################################################################
+#                                  VARIABLES                                    #
+#################################################################################
+
+i = 2      # lines
+k = 2      # colums
+x = i*k    # kind of matrice 
+
+c11 = " "+f"{"280":>4}"
+c12 = " "+f"{"20":>4}"
+c13 = " "+f"{"20":>4}"
+c21 = " "+f"{"2880":>4}"
+c22 = " "+f"{"20":>4}"
+c23 = " "+f"{"280":>4}"
+c31 = " "+f"{"20":>4}"
+c32 = " "+f"{"2":>4}"
+c33 = " "+f"{"0":>4}"
+
+#################################################################################
+#                                    LISTS                                      #
+#################################################################################
+
+elements_c = [c11, c12, c13, c21, c22, c23, c31, c32, c33]
+lenghts_cik = [] 
+
+
+#################################################################################
+#                                  FUNCTIONS                                    #
+#################################################################################
+
+def formate_list(x,list):
+
+    form_cik = " "+f"{"0":>4}"str(list[e])+
+        for e in range(0,x)
+            list[e].append(form_cik)
+    
+ 
+
+def get_lenght(cik):                        # get lenght of element of C
+    lik = len(str(cik))
+    return lik
+def create_list_lenghts(x):                 # create list with lenghts of Cik
+    for e in range(0,(x)):
+        l=get_lenght(elements_c[e])
+        lenghts_cik.append(l)
+
+def get_c_wide(i,k,list):                   # get the max. lenght of the lines for printing the matrice C
+    global c_wide
+    l1 = []
+    l2 = []
+    l3 = []
+    lines = [l1, l2, l3]
+    e1=0
+    en=k
+
+    for l in range (0,i):
+        for e in range (e1,en):
+            lines[l].append(list[e])
+
+    l1 = sorted(l1)
+    l2 = sorted(l2)
+    l3 = sorted(l3)
+    
+    l_l1 = l1[k-1]
+    l_l2 = l2[k-1]
+    if k == 3:
+        l_l3 = l3[k-1]
+        lines=[l_l1, l_l2, l_l3]
+    else:
+        lines=[l_l1, l_l2]
+
+    lines=sorted(lines)
+   
+    c_wide = (((lines[k-1])-1)*k+2)
+   
+def print_result_matrice(x, list):          # print result matrice c (wide of matrice / elements from list)
+    if x == 4:
+        i = 0
+    else:
+        i = 1
+    print(f"\n"+50*"="\
+        +"\n\nThe result matrice C is: \n"\
+        +"\t \u250C"+c_wide*" "+"\u2510 \n"\
+        +"    C =\t \u2502"+list[0]+list[1]+i*(list[2])+"\u2502 \n"\
+        +"\t \u2502"+list[3]+list[4]+i*(list[5])+"\u2502 \n"\
+        +i*("\t \u2502"+list[6]+list[7]+list[8]+"\u2502 \n")\
+        +"\t \u2514"+c_wide*" "+"\u2518 \n")
 
 
 
-###Output result matrice
-wide=10
-# JUST FOR EDIT
-c11 = 420
-c12 = 564
-c13 = 55
-c21 = 6684
-c22 = 44 
-c23 = 5
-c31 = 58
-c32 = 558
-c33 = 47
-#JUST FOR EDIT
+#################################################################################
+#                                  MAIN CODE                                    #
+#################################################################################
 
-
-# BUILD RESULT MATRICE                                                         
-
-l11= len(str(c11)+2*" ") ; l12 = len(str(c12)+2*" ") ; l13 = len(str(c13)+2*" ")                     # Lengths strings elements 1st line
-l21= len(str(c21)+2*" ") ; l22 = len(str(c22)+2*" ") ; l23 = len(str(c23)+2*" ")                     # Lengths strings elements 2nd line
-l31= len(str(c31)+2*" ") ; l32 = len(str(c32)+2*" ") ; l33 = len(str(c33)+2*" ")                     # Lengths strings elements 3th line
-
-sing_len_1st_line = [l11+l12+l13] ; sum_len_1st_line = sum(sing_len_1st_line)      # Sum lenghts 1st line
-sing_len_2nd_line = [l21+l22+l23] ; sum_len_2nd_line = sum(sing_len_2nd_line)      # Sum lenghts 2nd line
-sing_len_3rd_line = [l31+l32+l33] ; sum_len_3rd_line = sum(sing_len_3rd_line)      # Sum lenghts 3rd line
-
-if sum_len_1st_line >= sum_len_2nd_line and sum_len_1st_line >= sum_len_3rd_line:
-    c_wide = sum_len_1st_line
-elif sum_len_2nd_line >= sum_len_1st_line and sum_len_2nd_line >= sum_len_3rd_line:
-    c_wide = sum_len_2nd_line
-elif sum_len_3rd_line >= sum_len_1st_line and sum_len_3rd_line >= sum_len_2nd_line:
-    c_wide = sum_len_3rd_line
-c_wide = c_wide - 2
-
-# OUTPUT RESULT MATRICE
-
-print("The result matrice C is: \n"\
-     +"\t \u250C"+c_wide*" "+"\u2510 \n"\
-     +"    C =\t \u2502"+"  "+"20"+"  "+"200"+"  "+"400 "+"\u2502 \n"\
-     +"\t \u2502"+" 45        "+"\u2502 \n"\
-     +"\t \u2502"+" 45        "+"\u2502 \n"\
-     +"\t \u2514"+c_wide*" "+"\u2518 \n") 
+create_list_lenghts(x)
+get_c_wide(i,k,lenghts_cik)
+print_result_matrice(x,elements_c)
