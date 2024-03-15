@@ -395,7 +395,10 @@ while (process):
             break
         if operand == 1:
             matrice_addition(ai, bk, elements_A, elements_B)                         #as matrices are same size i take columns of a and lines of b
-    
+        if operand == 3:                                                            #cue of multiplication
+            matrice_multiplication(elements_A, elements_B, ai, ak, bi, bk)
+
+
         os.system("cls")
         print("\n\n"+50*"=")
         print("\n\tThe result matrix C is:")
