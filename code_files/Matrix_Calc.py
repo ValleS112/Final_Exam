@@ -351,6 +351,25 @@ def matrice_addition(columns, lines , list_a, list_b):                          
         for num in range(len(list_a)):                                                       #same function as above
             sum = int(list_a[num]) + int(list_b[num])
             list_c.append(sum)
+
+def matrice_multiplication(matrix1, matrix2, rows1, cols1, rows2, cols2):            #operation function for matrice multiplication
+   
+    global list_c
+   
+    if cols1 != rows2:                                                                       #if condition for right form
+        print("Die Matrizen können nicht multipliziert werden.")
+        return None
+    
+    result = [0] * (rows1 * cols2)
+    
+    for i in range(rows1):                                                                   #matrice multiplication itself
+        for j in range(cols2):
+            for k in range(cols1):
+                result[i * cols2 + j] += matrix1[i * cols1 + k] * matrix2[k * cols2 + j]
+    
+    list_c.append(result)
+
+
    
 
 
