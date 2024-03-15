@@ -332,7 +332,26 @@ def print_matrice(name,mi,mk,list):                                             
         i = 1
     print("\t\t"+len_name+"\u2514"+m_width+" \u2518 \n")                                  # Finish of brackets
          
+#################################################################################
+#                                 OPERATIONS                                    #                                 
+#################################################################################
+list_c = []  
+                                                                        # defining list_c as a list      
+def matrice_addition(columns, lines , list_a, list_b):                               #operation function for matrice addition
 
+   global list_c                                                                     #calling list_c as global
+   sum = 0 
+   if columns == 2 and lines == 2:                                                           #if-condition for 2x2 matrices
+        for num in range(len(list_a)):                                                       #for-loop active for num of lenghth of the list_a
+            sum = int(list_a[num]) + int(list_b[num])                                                #sum calculated for position "num" of both lists
+            list_c.append(sum)                                                               #the sum is added to the next position in the result list "list_c"
+
+
+   if columns == 3 and lines == 3:                                                           #if-condition for 3x3 matrices
+        for num in range(len(list_a)):                                                       #same function as above
+            sum = int(list_a[num]) + int(list_b[num])
+            list_c.append(sum)
+   
 
 
 #################################################################################
