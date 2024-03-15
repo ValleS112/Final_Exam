@@ -393,9 +393,9 @@ while (process):
         get_matrice_elements("B",bi,bk)                                             # User request for input elements of secon matrix 
         if back == 1:                                                               # Proof if user wants to return to main menue
             break
-
-
-        print(elements_A)
+        if operand == 1:
+            matrice_addition(ai, bk, elements_A, elements_B)                         #as matrices are same size i take columns of a and lines of b
+    
         os.system("cls")
         print("\n\n"+50*"=")
         print("\n\tThe result matrix C is:")
