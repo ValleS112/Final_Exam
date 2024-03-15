@@ -402,6 +402,6 @@ while (process):
         os.system("cls")
         print("\n\n"+50*"=")
         print("\n\tThe result matrix C is:")
-        print_matrice("C",ai,bk,elements_B)    
+        print_matrice("C",ai,bk,list_c)                                              #print output matrice c
         input()
     process = False
