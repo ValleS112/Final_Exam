@@ -409,9 +409,9 @@ while (process):
         if back == 1:                                                               # Proof if user wants to return to main menue
             break
         if operand == 1:
-            matrice_addition(ai, bk, elements_A, elements_B)    
+            matrice_addition(ai, bk, elements_A, elements_B)                        #cue for addition
         if operand == 2:
-            matrice_subtraction(ai, bk, elements_A, elements_B)
+            matrice_subtraction(ai, bk, elements_A, elements_B)                     #cue subtraction
         if operand == 3:                                                            #cue of multiplication
             matrice_multiplication(elements_A, elements_B, ai, ak, bi, bk)
 
