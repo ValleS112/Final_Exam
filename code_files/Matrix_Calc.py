@@ -419,6 +419,7 @@ while (process):
         os.system("cls")
         print("\n\n"+50*"=")
         print("\n\tThe result matrix C is:")
-        print_matrice("C",ai,bk,list_c)                                              #print output matrice c
+        print_matrice("C",ai,bk,list_c)                                                #print output matrice c
+        list_c.clear()                                                                 #clears list_c after calculation      
         input()
     process = False
