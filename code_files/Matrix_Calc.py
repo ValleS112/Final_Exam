@@ -335,8 +335,8 @@ def print_matrice(name,mi,mk,list):                                             
 #################################################################################
 #                                 OPERATIONS                                    #                                 
 #################################################################################
-list_c = []  
-                                                                        # defining list_c as a list      
+list_c = []                                                                         # defining list_c as a list  
+                                                                           
 def matrice_addition(columns, lines , list_a, list_b):                               #operation function for matrice addition
 
    global list_c                                                                     #calling list_c as global
@@ -352,6 +352,21 @@ def matrice_addition(columns, lines , list_a, list_b):                          
             sum = int(list_a[num]) + int(list_b[num])
             list_c.append(sum)
 
+def matrice_subtraction(columns, lines, list_a, list_b):  
+   
+   global list_c                                                                       #operation function for matrice subtraction
+
+   if columns == 2 and lines == 2:                                                           #if-condition for 2x2 matrices
+        for num in range(len(list_a)):                                                       #for-loop active for num of lenghth of the list_a
+            dif = int(list_a[num]) - int(list_b[num])                                                  #difference ("dif") calculated for position "num" of both lists
+            list_c.append(dif)                                                               #dif is added to the next position in the result list "list_c"
+
+
+   if columns == 3 and lines == 3:                                                           #if-condition for 3x3 matrices
+        for num in range(len(list_a)):                                                       #same function as above
+            dif = int(list_a[num]) - int(list_b[num])
+            list_c.append(dif)
+            
 def matrice_multiplication(matrix_a, matrix_b, lines_a, columns_a, lines_b, columns_b):            #operation function for matrice multiplication
    
     global list_c
