@@ -408,10 +408,10 @@ while (process):
         get_matrice_elements("B",bi,bk)                                             # User request for input elements of secon matrix 
         if back == 1:                                                               # Proof if user wants to return to main menue
             break
-        if operand == 1:
-            matrice_addition(ai, bk, elements_A, elements_B)                        #cue for addition
-        if operand == 2:
-            matrice_subtraction(ai, bk, elements_A, elements_B)                     #cue subtraction
+        if operand == 1:                                                            #cue for addition
+            matrice_addition(ai, bk, elements_A, elements_B)                       
+        if operand == 2:                                                            #cue subtraction
+            matrice_subtraction(ai, bk, elements_A, elements_B)                     
         if operand == 3:                                                            #cue of multiplication
             matrice_multiplication(elements_A, elements_B, ai, ak, bi, bk)
 
