@@ -366,7 +366,7 @@ def matrice_subtraction(columns, lines, list_a, list_b):
         for num in range(len(list_a)):                                                       #same function as above
             dif = int(list_a[num]) - int(list_b[num])
             list_c.append(dif)
-            
+
 def matrice_multiplication(matrix_a, matrix_b, lines_a, columns_a, lines_b, columns_b):            #operation function for matrice multiplication
    
     global list_c
@@ -409,7 +409,9 @@ while (process):
         if back == 1:                                                               # Proof if user wants to return to main menue
             break
         if operand == 1:
-            matrice_addition(ai, bk, elements_A, elements_B)                         #as matrices are same size i take columns of a and lines of b
+            matrice_addition(ai, bk, elements_A, elements_B)    
+        if operand == 2:
+            matrice_subtraction(ai, bk, elements_A, elements_B)
         if operand == 3:                                                            #cue of multiplication
             matrice_multiplication(elements_A, elements_B, ai, ak, bi, bk)
 
