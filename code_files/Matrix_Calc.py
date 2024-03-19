@@ -105,6 +105,8 @@ def print_welcome_screen(sec):                                                  
     head_symb_1 = "||"                                                                  # Set symbol for creating heading
     head_symb_2 = "//"                                                                  # Set symbol for creating heading
     head_symb_3 = "\\\\"                                                                # Set symbol for creating heading
+
+    os.system("cls")                                                                    # Clear window
     print(colour+"\n")                                                                ### Print welcome screen  
     print(fond_line_1())
     print(fond_line_2())                                                                    #
@@ -181,78 +183,45 @@ def get_matrice_size():                                                         
     global bi                                                                           # Global variable for number of lines of matrix B
     global bk                                                                           # Global variable for number of colums of matrix B
     global back                                                                         # Global variable for return to main menue
-    restart = 0                                                                         # Local variable for restart
-
+   
     ai = 0
     ak = 0
     bi = 0
     bk = 0
     menue = True
+
     while (menue):                                                                      # Loop for restart input
 
-        size = []                                                                           # List for storing numbs of lines and colums to process 
-        back = 0
-        restart = 0                                                                         # Local variable for restart
-        for run_m in range (0,2):                                                           # Loop for getting two different matrices
-
-            for run_r in range (0,2):                                                           # Loop for getting lines and colums of one matrix
-
-                if run_r == 0:                                                                      # Proof which round for output 'line' or 'colum'
-                    row = "Zeilenanzahl i"
-                else:
-                    row = "Spaltenanzahl k"
-
-                print("\n\n\t* * * "+user_choice+" * * * \n"\
-                    +"\n\tBitte \033[93m"+row+" der "+str(run_m+1)\
-                    +". Matrix\033[0m eingeben \033[91m(NUR GERADE ZAHLEN)\033[0m:\n"\
-                    +"\n\t\t   > ### < um Eingabe erneut zu starten "\
-                    +"\n\t\t   > xxx < Zurück zum Hauptmenü -\n")                                   # Print request
+        print("\n\n\t* * * "+user_choice+" * * * \n"\
+            +"\n\tBitte \033[93m Größe der beiden Matritzen"\
+            +"\033[0m wählen:\n"\
+            +"\n\t\t   (1)  zwei 2x2 Matritzen "\
+            +"\n\t\t   (2)  zwei 3x3 Matritzen "\
+            +"\n\t\t   > xxx < Zurück zum Hauptmenü -\n")                                   # Print user request
                                                                     
-                user_input = input("\n\t\t\033[94m"+row+"\033[0m der "+"\033[93m"+str(run_m+1)\
-                        +". Matrix\033[0m\t=> ")                                                    # User input
+        user_input = input("\n\t\tIhre Wahl: => ")                                          # User input
                 
-                if user_input.isdigit() and user_input != "0":                                         # Proof user input if integer or restart or return
-                    size.append(user_input)
-                elif user_input == "###":                                                           # Restart
-                    restart = 1
-                    break
-                elif user_input == "xxx":                                                           # Return
-                    back = 1
-                    break
-                elif user_input == "0":                                                             # Input 0 is not permitted
-                    print_error(3,1.5)
-                else:                                                                               # Wrong input
-                    print_error(1,1.5)
-                    restart = 1                                                                      
-                    break
-                os.system("cls")                                                                    # Clear window 
-
-            os.system("cls")                                                                    # Clear window
-            if restart == 1 or back == 1:                                                       # Proof if user wants restart or return to main menue
-                break
-
-        if len(size) == 4 and back != 1 and restart != 1 :                                  # Proof if enough runs and if user want back
-             
-            ai = int(size[0])                                                                    
-            ak = int(size[1])                                                                    
-            bi = int(size[2])
-            bk = int(size[3])
-
-            if (ai*ak) == (bi*bk) or (ak == bi and operand == 3):                               # Proof if calculation is possible to continue process
-                menue = False
-            else:                                                                               # Not possible
-                print_error(2,1.5)                                                                      
-
-        elif back == 1:                                                                     # Proof if user wants back to main menue
+        if user_input == "1":                                                               #Check which size user choosed                                      
+            ai = 2
+            ak = 2
+            bi = 2
+            bk = 2
+            menue = False
+        elif user_input == "2":                                                          
+            ai = 3
+            ak = 3
+            bi = 3
+            bk = 3
+            menue = False
+        elif user_input == "xxx":                                                           # Return to main menue
+            back = 1
             break
+        else:                                                                               # Wrong input
+            print_error(1,1.5)
+        os.system("cls")                                                                    # Clear window
 
-    # if back == 1:                                                                       # Proof if user wants back to main menue
-    #     menue = False
-    os.system("cls")                                                                    # Clear window
-    
 def get_matrice_elements(name,mi,mk):                                              # Get elements for matrices from user input with (name of matrice,lines,colums, name of list of elements)
     
-    #global elements_m
     global back                                                                             # Global variable for return to main menue
     restart = 0                                                                             # Local variable for restart user input
 
@@ -273,7 +242,7 @@ def get_matrice_elements(name,mi,mk):                                           
         for ri in range (0,mi):                                                             # Loop for getting the right order of elements depend on lines
             for rk in range (0,mk):                                                             # Loop for getting the right order of elements depend on colums
                 e = input("\t\t Element: "+str.lower(name)+str(ri+1)+str(rk+1)+"=\t")                                 # User input
-                if e.isdigit():                                                                     # Proof if input is an integer, restart or return to main menue 
+                if e.isdigit() or (e.startswith("-") and e[1:].isdigit()) :                                                                    # Proof if input is an integer, restart or return to main menue 
                     list_elements.append(e)                                                                      
                 elif e == "###":                                                                    # Restart                       
                     restart = 1                        
@@ -418,8 +387,12 @@ while (process):
 
         os.system("cls")
         print("\n\n"+50*"=")
+<<<<<<< Updated upstream
         print("\n\tThe result matrix C is:")
+=======
+        print("\n\tDie resultierende Matrix C lautet:")
+>>>>>>> Stashed changes
         print_matrice("C",ai,bk,list_c)                                                #print output matrice c
         list_c.clear()                                                                 #clears list_c after calculation      
         input()
-    process = False
+    
