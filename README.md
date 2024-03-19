@@ -1,6 +1,6 @@
 MATRIX-CALC   by Lukas, Valentin and Willi
 
-Welcome to our little helper, not only mother's one but for everybody.
+Welcome to our little helper, not only mother's one but for everybody.\r\n
 This is a small app for calculating matrices in size 2x2 and 3x3.
 You can choose between three mathoperations:
 Addition, Subtraction and Multiplication
