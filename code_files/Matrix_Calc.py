@@ -336,7 +336,7 @@ def matrice_subtraction(columns, lines, list_a, list_b):
             dif = int(list_a[num]) - int(list_b[num])
             list_c.append(dif)
 
-def matrice_multiplication (columns, lines, list_a, list_b):          #function gets called up for multiplication matrices
+def matrice_multiplication (columns, lines, list_a, list_b):          #function gets called up for multiplicating matrices
     
     c11 = 0                                                           #create an empty local matrix 
     c12 = 0
