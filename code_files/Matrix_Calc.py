@@ -337,16 +337,27 @@ def matrice_subtraction(columns, lines, list_a, list_b):
             list_c.append(dif)
 
 def matrice_multiplication (columns, lines, list_a, list_b):
-       
-    c11 = 0
+    
+    c11 = 0                                                           #create an empty local matrix 
     c12 = 0
+    c13 = 0
     c21 = 0
     c22 = 0
-    
-    int(c11) 
+    c23 = 0
+    c31 = 0
+    c32 = 0
+    c33 = 0
+
+    int(c11)                                                           #define values in matrix as integer
     int(c12)
+    int(c13)
     int(c21)
     int(c22)
+    int(c23)
+    int(c31)
+    int(c32)
+    int(c33)
+   
 
     if columns == 2 and lines == 2:                                 #multiplication of a 2times2 matrix
         c11 = int(list_a[0]) * int(list_b[0]) + int(list_a[1]) * int(list_b[2])
@@ -354,10 +365,10 @@ def matrice_multiplication (columns, lines, list_a, list_b):
         c21 = int(list_a[2]) * int(list_b[0]) + int(list_a[3]) * int(list_b[2])
         c22 = int(list_a[2]) * int(list_b[1]) + int(list_a[3]) * int(list_b[3])
 
-        c11 = int(list_c[0])
-        c12 = int(list_c[1])
-        c21 = int(list_c[2])
-        c22 = int(list_c[3])
+        list_c.append(c11)
+        list_c.append(c12)
+        list_c.append(c21)
+        list_c.append(c22)
 
     if columns == 3 and lines == 3:                                 #multiplication of a 3times3 matrix
         c11 = list_a[0] * list_b[0] + list_a[1] * list_b[3] + list_a[2] * list_b[6]
