@@ -336,22 +336,39 @@ def matrice_subtraction(columns, lines, list_a, list_b):
             dif = int(list_a[num]) - int(list_b[num])
             list_c.append(dif)
 
-def matrice_multiplication(matrix_a, matrix_b, lines_a, columns_a, lines_b, columns_b):            #operation function for matrice multiplication
-   
-    global list_c
-   
-    if columns_a != lines_b:                                                                       #if condition for right form
-        print("Die Matrizen können nicht multipliziert werden.")
-        return None
+def matrice_multiplication (columns, lines, list_a, list_b):
+       
+    c11 = 0
+    c12 = 0
+    c21 = 0
+    c22 = 0
     
-    result = [0] * (lines_a * columns_b)
-    
-    for i in range(lines_a):                                                                   #matrice multiplication itself
-        for j in range(columns_b):
-            for k in range(columns_a):
-                result[i * columns_b + j] += int(matrix_a[i * columns_a + k]) * int(matrix_b[k * columns_b + j])
-                list_c.append(result)
+    int(c11) 
+    int(c12)
+    int(c21)
+    int(c22)
 
+    if columns == 2 and lines == 2:                                 #multiplication of a 2times2 matrix
+        c11 = int(list_a[0]) * int(list_b[0]) + int(list_a[1]) * int(list_b[2])
+        c12 = int(list_a[0]) * int(list_b[1]) + int(list_a[1]) * int(list_b[3])
+        c21 = int(list_a[2]) * int(list_b[0]) + int(list_a[3]) * int(list_b[2])
+        c22 = int(list_a[2]) * int(list_b[1]) + int(list_a[3]) * int(list_b[3])
+
+        c11 = int(list_c[0])
+        c12 = int(list_c[1])
+        c21 = int(list_c[2])
+        c22 = int(list_c[3])
+
+    if columns == 3 and lines == 3:                                 #multiplication of a 3times3 matrix
+        c11 = list_a[0] * list_b[0] + list_a[1] * list_b[3] + list_a[2] * list_b[6]
+        c12 = list_a[0] * list_b[1] + list_a[1] * list_b[4] + list_a[2] * list_b[7]
+        c13 = list_a[0] * list_b[2] + list_a[1] * list_b[5] + list_a[2] * list_b[8]
+        c21 = list_a[3] * list_b[0] + list_a[4] * list_b[3] + list_a[5] * list_b[6]
+        c22 = list_a[3] * list_b[1] + list_a[4] * list_b[4] + list_a[5] * list_b[7]
+        c23 = list_a[3] * list_b[2] + list_a[4] * list_b[5] + list_a[5] * list_b[8]
+        c31 = list_a[6] * list_b[0] + list_a[7] * list_b[3] + list_a[8] * list_b[6]
+        c32 = list_a[6] * list_b[1] + list_a[7] * list_b[4] + list_a[8] * list_b[7]
+        c33 = list_a[6] * list_b[2] + list_a[7] * list_b[5] + list_a[8] * list_b[8]
 
    
 
@@ -381,16 +398,12 @@ while (process):
         if operand == 2:                                                            #cue subtraction
             matrice_subtraction(ai, bk, elements_A, elements_B)                     
         if operand == 3:                                                            #cue of multiplication
-            matrice_multiplication(elements_A, elements_B, ai, ak, bi, bk)
+            matrice_multiplication(ai, ak, elements_A, elements_B)
 
 
         os.system("cls")
         print("\n\n"+50*"=")
-<<<<<<< Updated upstream
-        print("\n\tThe result matrix C is:")
-=======
         print("\n\tDie resultierende Matrix C lautet:")
->>>>>>> Stashed changes
         print_matrice("C",ai,bk,list_c)                                                #print output matrice c
         list_c.clear()                                                                 #clears list_c after calculation      
         input()
