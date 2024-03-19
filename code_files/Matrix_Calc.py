@@ -366,8 +366,7 @@ def matrice_multiplication(matrix_a, matrix_b, lines_a, columns_a, lines_b, colu
         for j in range(columns_b):
             for k in range(columns_a):
                 result[i * columns_b + j] += int(matrix_a[i * columns_a + k]) * int(matrix_b[k * columns_b + j])
-    
-    list_c.append(result)
+                list_c.append(result)
 
 
    
