@@ -371,15 +371,25 @@ def matrice_multiplication (columns, lines, list_a, list_b):
         list_c.append(c22)
 
     if columns == 3 and lines == 3:                                 #multiplication of a 3times3 matrix
-        c11 = list_a[0] * list_b[0] + list_a[1] * list_b[3] + list_a[2] * list_b[6]
-        c12 = list_a[0] * list_b[1] + list_a[1] * list_b[4] + list_a[2] * list_b[7]
-        c13 = list_a[0] * list_b[2] + list_a[1] * list_b[5] + list_a[2] * list_b[8]
-        c21 = list_a[3] * list_b[0] + list_a[4] * list_b[3] + list_a[5] * list_b[6]
-        c22 = list_a[3] * list_b[1] + list_a[4] * list_b[4] + list_a[5] * list_b[7]
-        c23 = list_a[3] * list_b[2] + list_a[4] * list_b[5] + list_a[5] * list_b[8]
-        c31 = list_a[6] * list_b[0] + list_a[7] * list_b[3] + list_a[8] * list_b[6]
-        c32 = list_a[6] * list_b[1] + list_a[7] * list_b[4] + list_a[8] * list_b[7]
-        c33 = list_a[6] * list_b[2] + list_a[7] * list_b[5] + list_a[8] * list_b[8]
+        c11 = int(list_a[0]) * int(list_b[0]) + int(list_a[1]) * int(list_b[3]) + int(list_a[2]) * int(list_b[6])
+        c12 = int(list_a[0]) * int(list_b[1]) + int(list_a[1]) * int(list_b[4]) + int(list_a[2]) * int(list_b[7])
+        c13 = int(list_a[0]) * int(list_b[2]) + int(list_a[1]) * int(list_b[5]) + int(list_a[2]) * int(list_b[8])
+        c21 = int(list_a[3]) * int(list_b[0]) + int(list_a[4]) * int(list_b[3]) + int(list_a[5]) * int(list_b[6])
+        c22 = int(list_a[3]) * int(list_b[1]) + int(list_a[4]) * int(list_b[4]) + int(list_a[5]) * int(list_b[7])
+        c23 = int(list_a[3]) * int(list_b[2]) + int(list_a[4]) * int(list_b[5]) + int(list_a[5]) * int(list_b[8])
+        c31 = int(list_a[6]) * int(list_b[0]) + int(list_a[7]) * int(list_b[3]) + int(list_a[8]) * int(list_b[6])
+        c32 = int(list_a[6]) * int(list_b[1]) + int(list_a[7]) * int(list_b[4]) + int(list_a[8]) * int(list_b[7])
+        c33 = int(list_a[6]) * int(list_b[2]) + int(list_a[7]) * int(list_b[5]) + int(list_a[8]) * int(list_b[8])
+
+        list_c.append(c11)
+        list_c.append(c12)
+        list_c.append(c13)
+        list_c.append(c21)
+        list_c.append(c22)
+        list_c.append(c23)
+        list_c.append(c31)
+        list_c.append(c32)
+        list_c.append(c33)
 
    
 
