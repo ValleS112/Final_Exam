@@ -336,7 +336,7 @@ def matrice_subtraction(columns, lines, list_a, list_b):
             dif = int(list_a[num]) - int(list_b[num])
             list_c.append(dif)
 
-def matrice_multiplication (columns, lines, list_a, list_b):
+def matrice_multiplication (columns, lines, list_a, list_b):          #function gets called up for multiplication matrices
     
     c11 = 0                                                           #create an empty local matrix 
     c12 = 0
@@ -359,19 +359,19 @@ def matrice_multiplication (columns, lines, list_a, list_b):
     int(c33)
    
 
-    if columns == 2 and lines == 2:                                 #multiplication of a 2times2 matrix
-        c11 = int(list_a[0]) * int(list_b[0]) + int(list_a[1]) * int(list_b[2])
+    if columns == 2 and lines == 2:                                              #multiplication of a 2times2 matrix
+        c11 = int(list_a[0]) * int(list_b[0]) + int(list_a[1]) * int(list_b[2])     #calculate the elements and store them in local variables
         c12 = int(list_a[0]) * int(list_b[1]) + int(list_a[1]) * int(list_b[3])
         c21 = int(list_a[2]) * int(list_b[0]) + int(list_a[3]) * int(list_b[2])
         c22 = int(list_a[2]) * int(list_b[1]) + int(list_a[3]) * int(list_b[3])
 
-        list_c.append(c11)
+        list_c.append(c11)                                                          #add elements of the result matrix to the global list_c   
         list_c.append(c12)
         list_c.append(c21)
         list_c.append(c22)
 
-    if columns == 3 and lines == 3:                                 #multiplication of a 3times3 matrix
-        c11 = int(list_a[0]) * int(list_b[0]) + int(list_a[1]) * int(list_b[3]) + int(list_a[2]) * int(list_b[6])
+    if columns == 3 and lines == 3:                                              #multiplication of a 3times3 matrix
+        c11 = int(list_a[0]) * int(list_b[0]) + int(list_a[1]) * int(list_b[3]) + int(list_a[2]) * int(list_b[6])   #calculate the elements and store them in local variables
         c12 = int(list_a[0]) * int(list_b[1]) + int(list_a[1]) * int(list_b[4]) + int(list_a[2]) * int(list_b[7])
         c13 = int(list_a[0]) * int(list_b[2]) + int(list_a[1]) * int(list_b[5]) + int(list_a[2]) * int(list_b[8])
         c21 = int(list_a[3]) * int(list_b[0]) + int(list_a[4]) * int(list_b[3]) + int(list_a[5]) * int(list_b[6])
@@ -381,7 +381,7 @@ def matrice_multiplication (columns, lines, list_a, list_b):
         c32 = int(list_a[6]) * int(list_b[1]) + int(list_a[7]) * int(list_b[4]) + int(list_a[8]) * int(list_b[7])
         c33 = int(list_a[6]) * int(list_b[2]) + int(list_a[7]) * int(list_b[5]) + int(list_a[8]) * int(list_b[8])
 
-        list_c.append(c11)
+        list_c.append(c11)                                                          #add elements of the result matrix to the global list_c
         list_c.append(c12)
         list_c.append(c13)
         list_c.append(c21)
